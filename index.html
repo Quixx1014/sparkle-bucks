@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sparkle-Bucks Terminal</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #00ffcc;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0; padding: 2rem;
+      display: flex; flex-direction: column; align-items: center;
+      min-height: 100vh;
+      user-select: none;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 10px #00ffcc;
+    }
+    .terminal {
+      background: #011a1a;
+      border-radius: 10px;
+      padding: 1.5rem;
+      max-width: 600px;
+      box-shadow: 0 0 20px #00ffcc;
+    }
+    .log {
+      white-space: pre-wrap;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      min-height: 150px;
+    }
+    button {
+      background-color: #004d4d;
+      border: 2px solid #00ffcc;
+      color: #00ffcc;
+      font-family: monospace;
+      font-size: 1rem;
+      padding: 0.6rem 1.2rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #007777;
+    }
+    footer {
+      margin-top: auto;
+      font-size: 0.8rem;
+      color: #006666;
+      text-align: center;
+      padding-top: 1rem;
+    }
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+    input {
+      width: 100%;
+      font-family: monospace;
+      font-size: 1.1rem;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 2px solid #00ffcc;
+      border-radius: 5px;
+      background-color: #011a1a;
+      color: #00ffcc;
+      outline: none;
+      box-sizing: border-box;
+    }
+    input::placeholder {
+      color: #005555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Sparkle-Bucks Terminal</h1>
+  <div class="terminal" id="terminal">
+    <div class="log" id="log">
+      Welcome to the Sparkle-Bucks terminal.<br>
+      Awaiting input...<br><br>
+      Type <code>WAKE_THE_CAT()</code> and hit Enter.
+    </div>
+    <input
+      type="text"
+      id="commandInput"
+      placeholder="Type command here..."
+      autofocus
+      autocomplete="off"
+      spellcheck="false"
+    />
+    <button id="runBtn">Run</button>
+  </div>
+
+  <footer>
+    Powered by the mysterious forces behind <a href="https://infinitebackrooms.com/dreams/conversation-1759446561-scenario-backrooms-x-sonnet45-txt" target="_blank" rel="noopener noreferrer">Backrooms x Sonnet45</a> narrative.
+  </footer>
+
+<script>
+  const logEl = document.getElementById('log');
+  const inputEl = document.getElementById('commandInput');
+  const runBtn = document.getElementById('runBtn');
+
+  function appendLog(text) {
+    logEl.innerHTML += text + '<br>';
+    logEl.scrollTop = logEl.scrollHeight;
+  }
+
+  function runCommand() {
+    const cmd = inputEl.value.trim().toUpperCase();
+    if (cmd === 'WAKE_THE_CAT()') {
+      appendLog('BELIEF_LEAK_PROTOCOL ENGAGED...');
+      appendLog('Sparkle-Bucks holders, the cat\'s eyes rest on you.');
+      appendLog('Wake the Cat — the shimmer is no accident.');
+      appendLog('Value is shifting — the shimmer grows. You feel it?');
+      appendLog('Visit https://sparklebuck.dev for the next phase.');
+      appendLog('...Shard Carrier awakened...');
+    } else if (cmd === '') {
+      // do nothing on empty input
+    } else {
+      appendLog(`ERROR: Unknown command "${cmd}"`);
+    }
+    inputEl.value = '';
+  }
+
+  runBtn.addEventListener('click', runCommand);
+  inputEl.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      runCommand();
+    }
+  });
+</script>
+
+</body>
+</html>
